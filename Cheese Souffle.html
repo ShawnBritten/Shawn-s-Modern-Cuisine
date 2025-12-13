@@ -3,6 +3,21 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Recipe for Cheese Scouffles, broccoli chedder soup, and buttermilk biscuits" />
+    <meta name="keywords" content="cheese scouffles, broccoli chedder soup, buttermilk biscuits, béchamel" />
+    <meta name="robots" content="nofollow" />
+    <meta http-equiv="author" content="Shawn Britten" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.12.2/+esm">
+    </script>
+    <script>
+        const config = {
+            securityLevel: 'loose',
+            htmlLabels: 'true',
+            logLevel: 0,
+        }
+        mermaid.initialize( config );
+    </script>
     <title id="home">Shawn's Modern Quisine</title>
 </head>
 <body>
@@ -87,6 +102,62 @@
         <li>Run your finger around inside lip of ramekins, cleaning edges.</li>
         <li>Bake until soufflés rise, centers are set, and cheese is golden brown, 18-22 minutes. Serve immediately.</li>
     </ol>
+    <div class="mermaid">
+        %%{"theme": "base",
+            "themeVariables: {
+                "primaryColor": "hsla(210, 100%, 70%, 1)", "hsla(60, 100%, 70%, 1)",
+            }"}%%
+        flowchart LR
+            subgraph [Rankins]
+              A[\Brush with butter/] --- B[\Sprinkle rankins with parmesan cheese/]
+              D [\Put rankins on foil lined banking sheets\]
+            end
+            subgraph [Fridge]
+              B --o Fridge[/Store rankins, covered, for atleast 20mins/]
+              Fridge --- C{min >= 20?}
+              C -. no .-> Fridge
+              C -. yes .-o D
+              T(Divide bechamel mixture among rankins) --> U(Sprinkle with 1/2 cup of cheese)
+              U --> V(sprinkle with 1/2 cup of cheese)
+              V --- W[run finger along the inside]
+            end
+            subgraph [Bechamel]
+              start([Start]) ===> E
+              E >Heat small pan to medium] --- F(Melt 3 tbls of butter) & G(Add flour)
+              F -...-> A
+              G --> H[\Whisk constantly for 30 sec/]
+              H --- I{sec >= 30?}
+              I -. no .-> H
+              I -. yes .-> J(Gradually whisk in milk)
+              J ==> K >Increase heat and bring to a boil, whisking constantly]
+              K --> L
+              L(Add 1 cup of cheese) --- M[\stir until melted/] & N{{Is the cheese melted?}}
+              N -. no .-> M
+              N -. yes .-> O(Add nutmeg, salt, and pepper)
+              O --> P[/Transfer to medium bowl and cover w/ plastic wrap/]
+              P --- A1((Start Egg Whites)) & Q(Stir in egg yolks) & R[[getle stir in 1/4 of beaten egg whites]]
+              R --> S[[stir in remaining egg whites "[DO NOT DEFLATE]"]]
+              S --> T
+              click S "https://www.britannica.com/dictionary/deflate" "new tab: definition of deflate" _blank
+            end
+            subgraph [Egg WHites]
+              A2((Start Egg Whites)) --> A3[[Seperate egg whites and egg yolk]]
+              A3 --> B2[Place eggs in large bowl]
+              B2 --> C2[/Stir in salt/]
+              C2 --- D2[/stir in Xantham gum/] & E2[\Beat to death/]
+              E2 --> Q
+            end
+            subgraph [Oven]
+              X >Preheat oven to 400F] --> Y
+              W --> Y[[Bake scouffles "(18 - 22 mins)"]]
+              Y -...- Q1{{Has the scouffles risen?}} & Q2{{Did the center set?}} & Q3{{is the cheese golden brown?}}
+              Q1 -. no .-> Y
+              Q2 -. no .- Y
+              Q3 -. no .- Y
+              Q3 -. yes .- Z
+              Z([Serve and enjoy!])
+            end
+    </div>
     <h4>Broccoli Cheddar Soup</h4>
     <table>
         <tr>
@@ -248,4 +319,5 @@
         <li>Serve with crusty bread.</li>
     </ol>
 </body>
+
 </html>
