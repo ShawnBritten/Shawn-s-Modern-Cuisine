@@ -134,14 +134,14 @@ dist/mermaid.min.js">
               U --> V(sprinkle with 1/2 cup of cheese)
               V --- W[run finger along the inside]
             end
-            B --o Fridge
-            W --> Oven
+            B ==o Fridge
+            W ==> Oven
             subgraph Fridge
             direction BT
               _fridge[(Store rankins, covered, for atleast 20mins)] --- C{min >= 20?}
               C -. no .-> _fridge
             end
-            Fridge --o D
+            Fridge ==o D
             subgraph Bechamel
               start([Start]) ===> E
               E>Heat small pan to medium] --- F(Melt 3 tbls of butter)
@@ -174,7 +174,7 @@ dist/mermaid.min.js">
               C2 --- D2[/stir in Xantham gum "optional"/]
               D2 --> E2[\Beat to death/]
             end
-            Egg_Whites --> Q
+            Egg_Whites ==> Q
             subgraph Oven
             direction TB
               X>Preheat oven to 400F] --> Y
@@ -351,6 +351,7 @@ dist/mermaid.min.js">
 </body>
 
 </html>
+
 
 
 
