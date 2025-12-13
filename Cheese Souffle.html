@@ -111,7 +111,7 @@
         flowchart LR
             subgraph Rankins
               A[\Brush with butter/] --- B[\Sprinkle rankins with parmesan cheese/]
-              D [\Put rankins on foil lined banking sheets\] --> T
+              D[\Put rankins on foil lined banking sheets\] --> T
               T(Divide bechamel mixture among rankins) --> U(Sprinkle with 1/2 cup of cheese)
               U --> V(sprinkle with 1/2 cup of cheese)
               V --- W[run finger along the inside]
@@ -132,14 +132,16 @@
               H --- I{sec >= 30?}
               I -. no .-> H
               I -. yes .-> J(Gradually whisk in milk)
-              J ==> K >Increase heat and bring to a boil, whisking constantly]
+              J ==> K>Increase heat and bring to a boil, whisking constantly]
               K --> L
               L(Add 1 cup of cheese) --- M[\stir until melted/] & N{{Is the cheese melted?}}
               N -. no .-> M
               N -. yes .-> O(Add nutmeg, salt, and pepper)
               O --> P[/Transfer to medium bowl and cover w/ plastic wrap/]
-              P --- A1((Start Egg Whites)) & Q(Stir in egg yolks) & R[[getle stir in 1/4 of beaten egg whites]]
-              R --> S[[stir in remaining egg whites "[DO NOT DEFLATE]"]]
+              P --- A1((Start Egg Whites))
+              A1 --- Q(Stir in egg yolks)
+              Q --- R[[getle stir in 1/4 of beaten egg whites]]
+              R --> S[[stir in remaining egg whites "DO NOT DEFLATE"]]
               S --> T
               click S "https://www.britannica.com/dictionary/deflate" "new tab: definition of deflate" _blank
             end
@@ -148,14 +150,17 @@
               A2((Start Egg Whites)) --> A3[[Seperate egg whites and egg yolk]]
               A3 --> B2[Place eggs in large bowl]
               B2 --> C2[/Stir in salt/]
-              C2 --- D2[/stir in Xantham gum/] & E2[\Beat to death/]
+              C2 --- D2[/stir in Xantham gum "optional"/]
+              D2 --> E2[\Beat to death/]
               E2 --> Q
             end
             subgraph Oven
             direction TB
               X >Preheat oven to 400F] --> Y
               W --> Y[[Bake scouffles "(18 - 22 mins)"]]
-              Y -...- Q1{{Has the scouffles risen?}} & Q2{{Did the center set?}} & Q3{{is the cheese golden brown?}}
+              Y -...- Q1{{Has the scouffles risen?}}
+              Q1 -. yes .- Q2
+              Q2{{Did the center set?}} -. yes .- Q3{{is the cheese golden brown?}}
               Q1 -. no .-> Y
               Q2 -. no .- Y
               Q3 -. no .- Y
@@ -326,4 +331,5 @@
 </body>
 
 </html>
+
 
