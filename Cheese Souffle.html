@@ -2,6 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <title id="home">Shawn's Modern Quisine</title>
     <meta charset="utf-8" />
     <meta name="description" content="Recipe for Cheese Scouffles, broccoli chedder soup, and buttermilk biscuits" />
     <meta name="keywords" content="cheese scouffles, broccoli chedder soup, buttermilk biscuits, béchamel" />
@@ -15,11 +16,19 @@ dist/mermaid.min.js">
         const config = {
             securityLevel: 'loose',
             htmlLabels: 'true',
-            logLevel: 0,
+            logLevel: 0	    
         }
         mermaid.initialize( config );
     </script>
-    <title id="home">Shawn's Modern Quisine</title>
+    <style>
+	* {
+	   font-size: 110%;
+	}
+	.mermaid {
+	   width: 100%;
+	   height: 70%;
+	}
+    </style>
 </head>
 <body>
     <h1>Cheese Souffle and Buttermilk Biscuits and Cream of Broccoli Soup</h1>
@@ -104,11 +113,23 @@ dist/mermaid.min.js">
         <li>Bake until soufflés rise, centers are set, and cheese is golden brown, 18-22 minutes. Serve immediately.</li>
     </ol>
     <div class="mermaid">
-        
+        %%{init: {
+	"theme": "base",
+	"fontFamily": "verdana, sans-sarif",
+	"flowchart": {
+	   "diagramPadding": 64,
+	   "fontSize": "64px"
+	},
+	"themeVariables": {
+	   "primaryColor": "hsla(270, 100%, 70%, 1)",
+	   "clusterBkg": "hsla(270, 100%, 90%, 0.5)",
+	   "clusterBorder": "black"
+	}}}%%
+	%%{wrap}%%
         flowchart LR
             subgraph Rankins
               A[\Brush with butter/] --- B[\Sprinkle rankins with parmesan cheese/]
-              D[\Put rankins on foil lined banking sheets\] --> T
+              D(Put rankins on foil lined banking sheets) --> T
               T(Divide bechamel mixture among rankins) --> U(Sprinkle with 1/2 cup of cheese)
               U --> V(sprinkle with 1/2 cup of cheese)
               V --- W[run finger along the inside]
@@ -136,8 +157,9 @@ dist/mermaid.min.js">
               M --- N{{Is the cheese melted?}}
               N -. no .-> M
               N -. yes .-> O(Add nutmeg, salt, and pepper)
-              O --> P[/Transfer to medium bowl and cover w/ plastic wrap/]
-              P --- A1((Start Egg Whites))
+              O --> P & P2
+	      P[/Transfer to medium bowl/] --- A1
+              P2[/cover with plastic wrap/] --- A1((Start Egg Whites))
               
               Q(Stir in egg yolks) --- R[[getle stir in 1/4 of beaten egg whites]]
               R --> S[[stir in remaining egg whites 'DO NOT DEFLATE']]
