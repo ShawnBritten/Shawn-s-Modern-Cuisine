@@ -20,10 +20,14 @@ dist/mermaid.min.js">
         }
         mermaid.initialize( config );
     </script>
+    <script>
+	var thecallbackfun() {
+	   alert('Xanthan gum is a common food additive and thickening agent, a polysaccharide produced by fermenting sugar with the bacteria Xanthomonas campestris');
+	}
+    </script>
     <style>
 	* {
 	   font-size: 110%;
-	   padding: 1%;
 	}
 	.mermaid {
 	   width: 100%;
@@ -135,16 +139,16 @@ dist/mermaid.min.js">
               U --> V(sprinkle with 1/2 cup of cheese)
               V --- W[run finger along the inside]
             end
-            B ==o Fridge
-            W ==> Oven
+            B --o Fridge
+            W --> Oven
             subgraph Fridge
             direction BT
               _fridge[(Store rankins, covered, for atleast 20mins)] --- C{min >= 20?}
               C -. no .-> _fridge
             end
-            Fridge ==o D
+            Fridge --o D
             subgraph Bechamel
-			classDef important fill:red
+	      classDef important fill:red
               start([Start]) ===> E
               E>Heat small pan to medium] --- F(Melt 3 tbls of butter)
               F ====> A
@@ -167,19 +171,20 @@ dist/mermaid.min.js">
               R --> S[[stir in remaining egg whites 'DO NOT DEFLATE']]
               S --> T
               click S "https://www.britannica.com/dictionary/deflate" "new tab: definition of deflate" _blank
-              class S important
-			end
+	      class S important
+            end
             subgraph Egg_Whites [Egg Whites]
               direction LR
-			  classDef optional fill:lightblue
+	      classDef optional fill:lightblue
               A2((Start Egg Whites)) --> A3[[Seperate egg whites and egg yolk]]
               A3 --> B2[Place eggs in large bowl]
               B2 --> C2[/Stir in salt/]
               C2 --- D2[/stir in Xantham gum "optional"/]
               D2 --> E2[\Beat to death/]
-			  class D2 optional
+	      click D2 call thecallbackfun() "displays the definition"
+	      class D2 optional
             end
-            Egg_Whites ==> Q
+            Egg_Whites --> Q
             subgraph Oven
             direction TB
               X>Preheat oven to 400F] --> Y
@@ -356,9 +361,3 @@ dist/mermaid.min.js">
 </body>
 
 </html>
-
-
-
-
-
-
