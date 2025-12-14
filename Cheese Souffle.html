@@ -122,7 +122,7 @@ dist/mermaid.min.js">
 	"theme": "base",
 	"fontFamily": "verdana, sans-sarif",
 	"flowchart": {
-	   "diagramPadding": 64,
+	   "diagramPadding": 16,
 	   "fontSize": "64px"
 	},
 	"themeVariables": {
@@ -168,10 +168,9 @@ dist/mermaid.min.js">
               P2[/cover with plastic wrap/] --- A1((Start Egg Whites))
               
               Q(Stir in egg yolks) --- R[[getle stir in 1/4 of beaten egg whites]]
-              R --> S[[stir in remaining egg whites 'DO NOT DEFLATE']]
+              R --> S[[stir in remaining egg whites 'DO NOT DEFLATE']]:::important
               S --> T
               click S "https://www.britannica.com/dictionary/deflate" "new tab: definition of deflate" _blank
-	      class S important
             end
             subgraph Egg_Whites [Egg Whites]
               direction LR
@@ -179,10 +178,9 @@ dist/mermaid.min.js">
               A2((Start Egg Whites)) --> A3[[Seperate egg whites and egg yolk]]
               A3 --> B2[Place eggs in large bowl]
               B2 --> C2[/Stir in salt/]
-              C2 --- D2[/stir in Xantham gum "optional"/]
+              C2 --- D2[/stir in Xantham gum "optional"/]:::optional
               D2 --> E2[\Beat to death/]
 	      click D2 call thecallbackfun() "displays the definition"
-	      class D2 optional
             end
             Egg_Whites --> Q
             subgraph Oven
@@ -361,3 +359,4 @@ dist/mermaid.min.js">
 </body>
 
 </html>
+
