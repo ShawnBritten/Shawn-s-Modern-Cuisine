@@ -144,6 +144,7 @@ dist/mermaid.min.js">
             end
             Fridge ==o D
             subgraph Bechamel
+			classDef important fill:red
               start([Start]) ===> E
               E>Heat small pan to medium] --- F(Melt 3 tbls of butter)
               F ====> A
@@ -166,14 +167,17 @@ dist/mermaid.min.js">
               R --> S[[stir in remaining egg whites 'DO NOT DEFLATE']]
               S --> T
               click S "https://www.britannica.com/dictionary/deflate" "new tab: definition of deflate" _blank
-            end
+              class S important
+			end
             subgraph Egg_Whites [Egg Whites]
               direction LR
+			  classDef optional fill:lightblue
               A2((Start Egg Whites)) --> A3[[Seperate egg whites and egg yolk]]
               A3 --> B2[Place eggs in large bowl]
               B2 --> C2[/Stir in salt/]
               C2 --- D2[/stir in Xantham gum "optional"/]
               D2 --> E2[\Beat to death/]
+			  class D2 optional
             end
             Egg_Whites ==> Q
             subgraph Oven
@@ -352,6 +356,7 @@ dist/mermaid.min.js">
 </body>
 
 </html>
+
 
 
 
